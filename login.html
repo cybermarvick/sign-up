@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="username" type="text"> 
+    <input id="password" type="text">
+    <button onclick="login()"> login</button>
+    
+</body>
+</html>
+<script>
+    let database = JSON.parse(localStorage.getItem('myDataBase'))
+    function login(params) {
+        let foundUser = database.find((dataObj)=> (dataObj.username === username.value|| dataObj.mail === username.value) && dataObj.password === password.value  )
+
+        let findUsername = database.find((dataObj)=> dataObj.username === username.value)
+        let findPassword = database.find((dataObj)=> dataObj.password === password.value)
+
+        if(foundUser){
+            alert('login success')
+        }else if (findUsername !== undefined && findPassword === undefined){
+            alert('password is incorrect')
+        }
+        else{
+            alert('user does not exist , please signup')
+            window.location.href = 'index.html'
+
+            
+        }
+    }
+
+
+
+</script>
