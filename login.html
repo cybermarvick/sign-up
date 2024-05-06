@@ -14,7 +14,8 @@
 </html>
 <script>
     let database = JSON.parse(localStorage.getItem('myDataBase'))
-    function login(params) {
+
+    function login() {
         let foundUser = database.find((dataObj)=> (dataObj.username === username.value|| dataObj.mail === username.value) && dataObj.password === password.value  )
 
         let findUsername = database.find((dataObj)=> dataObj.username === username.value)
@@ -22,6 +23,8 @@
 
         if(foundUser){
             alert('login success')
+            localStorage.setItem('loggedinUser' , JSON.stringify(foundUser))
+            window.location.href = 'dashboard.html'
         }else if (findUsername !== undefined && findPassword === undefined){
             alert('password is incorrect')
         }

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+
+localStorage.setItem('NAME' , 'DAMI')
+// localStorage.removeItem('NAME')
+
+let theNameISaved = localStorage.getItem('NAME')
+console.log(theNameISaved);
+
+
+let array = localStorage.getItem('arr') || []
+let num = localStorage.getItem('num') || 0
+let string = localStorage.getItem('strun') || ''
+
+array.push('davido')
+localStorage.setItem('arr' , array)
+
+// document.body.innerHTML = localStorage.getItem('arr')
+</script>

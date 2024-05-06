@@ -54,6 +54,7 @@ function submitDetails() {
     }  
 }
 inputPassword.type="password"
+
 function showPassword() {
     // inputPassword.type ="text"
     // showButton.textContent = "Hide"
